@@ -1,0 +1,9 @@
+requests
+json
+threading
+datetime
+cryptography
+tls_client
+typing_extensions
+colorama
+discord_webhook
