@@ -1,30 +1,22 @@
-BEST IF RUN USING VSC
+You are recommended to run this within [Visual Studio Code](https://code.visualstudio.com/Download)!
 
 
-1st load combos into accounts.txt (you can get combos from discord.gg/combo)
+# Getting Started
+Place your combos in 'accounts.txt'. You can use [Sodium](https://discord.gg/combo) to get combos.
+Place proxies inside of 'proxies.txt'. You can get proxies from [ProxyScrape](https://proxyscrape.com).
 
-next load proxies into proxies.txt
+Edit 'config.json' and replace 'capbypass_key' with your captcha key. 
+You can change the amount of threads. The more threads you use the faster the bruter will work but it will take up more resources.
+Change 'webhook_url' to your discord webhook url for notifications when you get hits.
 
-next add your capbypass key and discord webhook into config.json
+If you don't already have python installed you should probably do that now lol https://python.org/
 
-now youll need to run a few commands into the terminal. 
+**Make sure you have the required modules installed!**
 
-type the following commands individually: 
+``pip install -r requirements.txt``
 
-pip install cryptography
-pip install tls_client
-pip install typing_extensions
-pip install colorama
-pip install discord_webhook
+Now you can run the bruter using VSC (Recommended) or with the terminal using ``python main.py``.
 
-then simply run the bruter lol
+To get a captcha key check out https://capbypass.com!
 
-
-
-
-
-DISCORD.GG/PGER
-
-to buy solves go to capbypass.com
-
-get combos at .gg/combo
+## https://discord.gg/PGer
