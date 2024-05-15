@@ -7,7 +7,7 @@ next load proxies into proxies.txt
 
 next add your capbypass key and discord webhook into config.json
 
-now youll need to run a few commants into the terminal. 
+now youll need to run a few commands into the terminal. 
 
 type the following commands individually: 
 
