@@ -1,0 +1,30 @@
+BEST IF RUN USING VSC
+
+
+1st load combos into accounts.txt (you can get combos from discord.gg/combo)
+
+next load proxies into proxies.txt
+
+next add your capbypass key and discord webhook into config.json
+
+now youll need to run a few commants into the terminal. 
+
+type the following commands individually: 
+
+pip install cryptography
+pip install tls_client
+pip install typing_extensions
+pip install colorama
+pip install discord_webhook
+
+then simply run the bruter lol
+
+
+
+
+
+DISCORD.GG/PGER
+
+to buy solves go to capbypass.com
+
+get combos at .gg/combo
