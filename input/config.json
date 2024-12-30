@@ -1,6 +1,6 @@
 {
-    "capbypass_key": "",
+    "capbypass_key": "bdd9f8c33b4dfa2776ed7ddce7265c15"
     "threads": 20,
     "log_to_webhook": true,
-    "webhook_url": ""
+    "webhook_url": "https://discord.com/api/webhooks/1323266264960864376/9TOGW0h2OEkCnVpvf7xSX3HQY0X0YJyYNEr0IZs-0tP6sCIs7i74QYwBQA6qLjJ7UIHm"
 }
